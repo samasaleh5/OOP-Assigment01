@@ -71,16 +71,30 @@
             #endregion
 
             #region question5
-            Console.Write("Please Enter Color [Red-Green-Blue]: ");
-            string color = Console.ReadLine();
-            if (Enum.TryParse(color, true, out Colors col))
-            {
-                Console.WriteLine($"{color} is primary color.");
-            }
-            else
-            {
-                Console.WriteLine($"{color} is not a primary color.");
-            }
+            //Console.Write("Please Enter Color [Red-Green-Blue]: ");
+            //string color = Console.ReadLine();
+            //if (Enum.TryParse(color, true, out Colors col))
+            //{
+            //    Console.WriteLine($"{color} is primary color.");
+            //}
+            //else
+            //{
+            //    Console.WriteLine($"{color} is not a primary color.");
+            //}
+            #endregion
+
+            #region question6
+            Console.WriteLine("Enter The Coordinatesfor point 1 (X Y):");
+            string[] args1 = Console.ReadLine().Split();
+            Point p1 = new Point(double.Parse(args1[0]), double.Parse(args1[1]));
+
+            Console.WriteLine("Enter The Coordinatesfor point 2 (X Y):");
+            string[] args2 = Console.ReadLine().Split();
+            Point p2 = new Point(double.Parse(args2[0]), double.Parse(args2[1]));
+
+            double distance=p1.Distance(p2);
+            Console.WriteLine($"The Distance between point1 and point2 is {distance}");
+
             #endregion
 
         }
