@@ -84,17 +84,40 @@
             #endregion
 
             #region question6
-            Console.WriteLine("Enter The Coordinatesfor point 1 (X Y):");
-            string[] args1 = Console.ReadLine().Split();
-            Point p1 = new Point(double.Parse(args1[0]), double.Parse(args1[1]));
+            //Console.WriteLine("Enter The Coordinatesfor point 1 (X Y):");
+            //string[] args1 = Console.ReadLine().Split();
+            //Point p1 = new Point(double.Parse(args1[0]), double.Parse(args1[1]));
 
-            Console.WriteLine("Enter The Coordinatesfor point 2 (X Y):");
-            string[] args2 = Console.ReadLine().Split();
-            Point p2 = new Point(double.Parse(args2[0]), double.Parse(args2[1]));
+            //Console.WriteLine("Enter The Coordinatesfor point 2 (X Y):");
+            //string[] args2 = Console.ReadLine().Split();
+            //Point p2 = new Point(double.Parse(args2[0]), double.Parse(args2[1]));
 
-            double distance=p1.Distance(p2);
-            Console.WriteLine($"The Distance between point1 and point2 is {distance}");
+            //double distance=p1.Distance(p2);
+            //Console.WriteLine($"The Distance between point1 and point2 is {distance}");
 
+            #endregion
+
+            #region question7
+            Person[] persons = new Person[3];
+            for (int i = 0; i < persons.Length; i++)
+            {
+                Console.WriteLine($"Enter Details For Person{i + 1}");
+                Console.Write("Name: ");
+                string name = Console.ReadLine();
+                Console.Write("Age: ");
+                int age=int.Parse(Console.ReadLine());
+
+                persons[i] = new Person(name, age);
+            }
+           Person oldest=persons[0];
+            for (int i = 1; i < persons.Length; i++)
+            {
+                if (persons[i].age > oldest.age)
+                {
+                    oldest = persons[i];
+                }
+            }
+                Console.WriteLine($"The Oldest person is: {oldest.Name}, Age: {oldest.age}");
             #endregion
 
         }
