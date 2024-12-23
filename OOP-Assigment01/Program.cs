@@ -14,6 +14,10 @@
         {
             read, write, delete, excute
         }
+        enum Colors
+        {
+            red, green, blue
+        }
         static void Main(string[] args)
         {
             #region question1
@@ -64,6 +68,19 @@
 
             #region question4
             //dont understand ideaa only made enum 
+            #endregion
+
+            #region question5
+            Console.Write("Please Enter Color [Red-Green-Blue]: ");
+            string color = Console.ReadLine();
+            if (Enum.TryParse(color, true, out Colors col))
+            {
+                Console.WriteLine($"{color} is primary color.");
+            }
+            else
+            {
+                Console.WriteLine($"{color} is not a primary color.");
+            }
             #endregion
 
         }
